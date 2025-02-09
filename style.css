@@ -11,10 +11,33 @@
     overflow-x: hidden;
     background-color: #b6e2f1;
   }
-  .hero-image img {
+ .hero-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.hero-image {
     width: 100%;
-   object-fit: cover;
-  }
+    height: auto;
+    max-width: 100%;
+    display: block;
+    object-fit: cover; /* Ensures the image scales properly */
+}
+.image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centers image */
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
   h1, h2 {
     text-align: center;
   }
@@ -327,7 +350,6 @@
       flex-direction: column;
       align-items: center;
     }
-  
     .footer-section {
       text-align: center;
       margin-bottom: 20px;
@@ -337,4 +359,73 @@
       justify-content: center;
     }
   }
+  /* Responsive Navbar */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #0078d7;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        border-radius: 5px;
+        width: 150px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
+/* Responsive Images */
+.hero-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Responsive Footer */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+/* Responsive Buttons */
+.btn {
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+/* Fix Appointment Container */
+@media screen and (max-width: 768px) {
+    .appointment-container h2 {
+        font-size: 28px;
+    }
+
+    .appointment-container p {
+        font-size: 16px;
+    }
+
+    .appointment-container .btn {
+        width: 100%;
+    }
+    .hero-image img {
+      height: auto;
+      object-fit: cover;
+    }
+}
+
   
